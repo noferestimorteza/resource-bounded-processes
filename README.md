@@ -84,6 +84,14 @@ resource-bounded-processes/
 pip install pandas numpy scikit-learn lightgbm torch transformers
 ```
 
+### Raw Dataset
+
+The raw kernel trace data used in this project is hosted in a dedicated dataset repository:
+
+**[https://github.com/mnoferestibrocku/dataset-repo](https://github.com/mnoferestibrocku/dataset-repo)**
+
+Download or clone it and place the relevant CSV files (e.g., `holedata.csv`, `event_type_with_category.csv`) in the project root before running the pipeline.
+
 ### Data Collection (optional)
 
 If you want to collect your own traces rather than use the provided data, enable LTTng kernel tracing with syscall instrumentation:
