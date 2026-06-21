@@ -154,8 +154,3 @@ python Ensemble.py    # Ensemble all models
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-## Contact
-
-For questions about the code or the research, please open a GitHub issue or refer to the paper above.
