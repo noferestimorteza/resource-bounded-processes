@@ -1,6 +1,6 @@
 # Resource-Bounded Processes
 
-Early-stage prediction of resource-bound type (CPU-bound, I/O-bound, memory-bound, etc.) for threads using real-time Linux kernel event analysis. This repository contains the full pipeline — from raw kernel trace ingestion and feature extraction to labeling and model training — accompanying the research paper cited below.
+Early-stage prediction of resource-bound type (CPU-bound, I/O-bound, memory-bound, etc.) for threads using real-time Linux kernel event analysis. This repository contains the full pipeline, from raw kernel trace ingestion and feature extraction to labeling and model training accompanying the research paper cited below.
 
 ---
 
@@ -74,16 +74,6 @@ resource-bounded-processes/
 
 ## Getting Started
 
-### Prerequisites
-
-- Python 3.8+
-- [LTTng](https://lttng.org/) (for collecting kernel traces, if starting from raw data)
-- Python packages:
-
-```bash
-pip install pandas numpy scikit-learn lightgbm torch transformers
-```
-
 ### Raw Dataset
 
 The raw kernel trace data used in this project is hosted in a dedicated dataset repository:
@@ -91,21 +81,6 @@ The raw kernel trace data used in this project is hosted in a dedicated dataset 
 **[https://github.com/mnoferestibrocku/dataset-repo](https://github.com/mnoferestibrocku/dataset-repo)**
 
 Download or clone it and place the relevant CSV files (e.g., `holedata.csv`, `event_type_with_category.csv`) in the project root before running the pipeline.
-
-### Data Collection (optional)
-
-If you want to collect your own traces rather than use the provided data, enable LTTng kernel tracing with syscall instrumentation:
-
-```bash
-lttng create my-session
-lttng enable-event --kernel --syscall --all
-lttng start
-# ... run workloads ...
-lttng stop
-lttng destroy
-```
-
-Export the trace to CSV (e.g., via `babeltrace2`) before running the pipeline.
 
 ### Running the Pipeline
 
